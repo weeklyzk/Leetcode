@@ -1,1 +1,24 @@
+1.Runtime: 756 ms, faster than 12.70% of Python3 online submissions for Min Stack.
+class MinStack:
 
+    def __init__(self):
+        """
+        initialize your data structure here.
+        """
+        self.stack = []
+        
+
+    def push(self, x: int) -> None:
+        self.stack.append(x)
+
+    def pop(self) -> None:
+        if self.stack:
+            self.stack.pop()
+        else:
+            raise LookupError("stack is empty")
+
+    def top(self) -> int:
+        return self.stack[-1]
+
+    def getMin(self) -> int:
+        return min(self.stack)
